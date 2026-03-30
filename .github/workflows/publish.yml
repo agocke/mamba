@@ -1,0 +1,43 @@
+name: Publish to NuGet
+
+on:
+  release:
+    types: [published]
+
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+  DOTNET_NOLOGO: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for trusted publishing OIDC token
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --configuration Release --no-build --verbosity normal
+
+      - name: Pack
+        run: dotnet pack src/Mamba.csproj --configuration Release --no-build -p:PackageVersion=${{ github.event.release.tag_name }}
+
+      - name: NuGet login (OIDC)
+        uses: nuget/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: Publish to NuGet
+        run: dotnet nuget push artifacts/package/release/*.nupkg --api-key ${{ env.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
