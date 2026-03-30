@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mamba.Tests", "tests\Mamba.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mamba.Benchmarks", "benchmarks\Mamba.Benchmarks.csproj", "{D7B9EEBD-2CE4-DB65-A86F-08936FD2E59B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mamba", "src\mamba.csproj", "{0FD4C606-E0C3-C91F-639F-6605E9D1F626}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mamba", "src\Mamba.csproj", "{0FD4C606-E0C3-C91F-639F-6605E9D1F626}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aot-startup", "aot-startup", "{19DD62F3-A939-D1ED-3F49-FA53940F0BBB}"
 EndProject
