@@ -37,7 +37,7 @@ public static class StartupBenchmark
         var port = GetAvailablePort();
         var url = $"http://127.0.0.1:{port}";
 
-        var serverTask = HttpServer.Listen(url, router, cts.Token);
+        var serverTask = HttpServer.Listen(url, router, options: null, cts.Token);
 
         using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(5) };
         while (true)
@@ -91,7 +91,7 @@ public static class StartupBenchmark
         var url = $"http://127.0.0.1:{port}";
 
         sw.Restart();
-        var serverTask = HttpServer.Listen(url, router, cts.Token);
+        var serverTask = HttpServer.Listen(url, router, options: null, cts.Token);
 
         using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(5) };
         while (true)

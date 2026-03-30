@@ -20,7 +20,7 @@ var port = args.Length > 0 ? int.Parse(args[0]) : 5000;
 var url = $"http://127.0.0.1:{port}";
 
 var serverStart = Stopwatch.StartNew();
-var serverTask = HttpServer.Listen(url, router, cts.Token);
+var serverTask = HttpServer.Listen(url, router, options: null, cts.Token);
 
 // Wait for /ready endpoint  
 using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(5) };
