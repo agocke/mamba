@@ -5,14 +5,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAotCompatible>true</IsAotCompatible>
+    <Version>0.1.0-preview</Version>
 
     <!-- NuGet package metadata -->
     <PackageId>Mamba</PackageId>
-    <Description>TODO: Add package description</Description>
-    <Authors>TODO: Add authors</Authors>
+    <Description>A lightweight HTTP server library for .NET</Description>
+    <Authors>agocke</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/TODO/mamba</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/TODO/mamba.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/agocke/mamba</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/agocke/mamba.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>aspnetcore</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
