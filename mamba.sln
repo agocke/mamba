@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mamba", "src\mamba.csproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aot-startup", "aot-startup", "{19DD62F3-A939-D1ED-3F49-FA53940F0BBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AotStartup", "benchmarks\aot-startup\AotStartup.csproj", "{AB94A6B2-CBBA-55D5-07EB-98346F140070}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AotStartup", "aot-startup\AotStartup.csproj", "{AB94A6B2-CBBA-55D5-07EB-98346F140070}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

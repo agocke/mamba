@@ -1,15 +1,5 @@
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
 using Mamba;
-
-// Check for startup benchmark mode
-if (args.Length > 0 && args[0] == "startup")
-{
-    await StartupBenchmark.Run();
-    return;
-}
-
-BenchmarkRunner.Run<HttpBenchmarks>();
 
 [MemoryDiagnoser]
 [SimpleJob(warmupCount: 3, iterationCount: 10)]
@@ -32,7 +22,7 @@ public class HttpBenchmarks
         var port = GetAvailablePort();
         _baseUrl = $"http://127.0.0.1:{port}";
         
-        _serverTask = HttpServer.Listen(_baseUrl, router, _cts.Token);
+        _serverTask = HttpServer.Listen(_baseUrl, router, options: null, _cts.Token);
         
         _client = new HttpClient();
         
